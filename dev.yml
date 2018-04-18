@@ -1,4 +1,6 @@
 - hosts: all
   become: yes
   roles:
-    - httpd
+    - git
+    - node
+    - dev-user

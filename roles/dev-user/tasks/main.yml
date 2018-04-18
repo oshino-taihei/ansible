@@ -1,0 +1,13 @@
+- name: create dev OS group
+  group:
+    name: dev
+- name: create dev OS user
+  user:
+    name: dev
+    groups: dev
+    shell: /bin/bash
+- name: add dev user to sudoers 
+  lineinfile:
+    dest: /etc/sudoers
+    backup: yes
+    line: 'dev ALL=(ALL) NOPASSWD: ALL'
